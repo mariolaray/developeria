@@ -30,5 +30,16 @@ string name = "Bob";
 int num1 = 3;
 double num2 = 34.4;
 
+// EJEMPLOS 1.3
 Console.Write("Hello " + name + "! You have " + num1 + " messages in your inbox. The temperature is "+num2 + " celsius.");
+
+Console.WriteLine(@"c:\source\repos");
+
+int version = 11;
+string updateText = "Update to Windows";
+string message = $"{updateText} {version.ToString()}";
+Console.WriteLine(message);
+
+string projectName = "First-Project";
+Console.WriteLine($@"C:\Output\{projectName}\Data");
 */
