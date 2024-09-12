@@ -1,55 +1,50 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Drawing;
-
-//EJERCICIO 1.1.1
-//Console.Write("Congratulations!");
-//Console.Write(" ");
-//Console.Write("You wrote your first lines of code.");
-
-//EJERCICIO 1.1.2
-//Console.WriteLine("This is the first line");
-//Console.WriteLine("");
-//Console.WriteLine("This is the second line");
-
-//EJERCICIO 1.1.3
-//Console.WriteLine('b');
 /*
+//EJEMPLOS 1.4 (Sumas con conversion implicita de datos)
+int firstNumber = 12;
+int secondNumber = 7;
+Console.WriteLine(firstNumber + secondNumber);
 
-// EJERCICIO 1.2.1
 string firstName = "Bob";
-Console.WriteLine(firstName);
-firstName = "Berta";
-Console.WriteLine(firstName);
-firstName = "Josefa";
-Console.WriteLine(firstName);
-firstName = "Raul";
-Console.WriteLine(firstName);
+int widgetsSold = 7;
+Console.WriteLine(firstName + " sold " + widgetsSold + " widgets.");
 
-// EJERCICIO 1.2.2
-string name = "Bob";
-int num1 = 3;
-double num2 = 34.4;
 
-// EJEMPLOS 1.3
-Console.Write("Hello " + name + "! You have " + num1 + " messages in your inbox. The temperature is "+num2 + " celsius.");
+// EJERCICIO PROPUESTO 1 calculadora
+int num1 = 7;
+int num2= 2;
 
-Console.WriteLine(@"c:\source\repos");
+int resSuma = num1+num2;
+int resResta = num1-num2;
+int resMul = num1*num2;
+int resDiv = num1/num2;
 
-int version = 11;
-string updateText = "Update to Windows";
-string message = $"{updateText} {version.ToString()}";
-Console.WriteLine(message);
+Console.WriteLine("Suma " + resSuma + " Resta " + resResta + " Multiplicacion "
++ resMul + " Division " + resDiv );
 
-string projectName = "First-Project";
-Console.WriteLine($@"C:\Output\{projectName}\Data");
+// EJERCICIO PROPUESTO 2 Division usando datos decimales literales
 
-//EJERCICIO 1.3
-string projectName = "ACME";
-string englishLocation = $@"c:\Exercise\{projectName}\data.txt";
-Console.WriteLine($"View English output:\n\t\t{englishLocation}\n");
+double div1 = 15.15;
+double div2 = 5;
 
-string russianMessage = "\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0440\u0443\u0441\u0441\u043a\u0438\u0439 \u0432\u044b\u0432\u043e\u0434";
-string russianLocation = $@"c:\Exercise\{projectName}\ru-RU\data.txt";
-Console.WriteLine($"{russianMessage}:\n\t\t{russianLocation}\n");
+double divRes = div1/div2;
+Console.WriteLine("Division decimales : " + divRes);
 
+// EJERCICIO PROPUESTO 3 Division convertiendo a enteros
+
+double resConvers = (double)num1/num2;
+Console.WriteLine("Conversion divisiona enteros es " + resConvers);
+
+// EJERCICIO PROPUESTO 4 Resto division entera
+
+int resto = num1%num2;
+
+Console.WriteLine("El resto es " + resto);
+
+
+//EJERCICIO 1.4.2 Prueba de celsius
+int fahrenheit = 94;
+decimal celsius = (fahrenheit - 32m) * (5m / 9m);
+Console.WriteLine("The temperature is " + Math.Round(celsius,1) + " Celsius.");
 */
