@@ -47,4 +47,14 @@ Console.WriteLine("El resto es " + resto);
 int fahrenheit = 94;
 decimal celsius = (fahrenheit - 32m) * (5m / 9m);
 Console.WriteLine("The temperature is " + Math.Round(celsius,1) + " Celsius.");
+
+
+int notSophia = 93;int notSophia2 = 87;int notSophia3 = 98;int notSophia4 = 95;int notSophia5 = 100;
+int notNicolas =80;int notNicolas2 = 83;int notNicolas3 = 82; int notNicolas4=88;int notNicolas5 = 85;
+
+double hola = 30.1415;
+Console.WriteLine(hola.ToString("F1"));
+Type tipoHola = hola.GetType();
+Console.WriteLine($"El tipo de variable es : {tipoHola}");
+
 */
