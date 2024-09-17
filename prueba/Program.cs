@@ -1,94 +1,83 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Drawing;
 /*
-// EJEMPLO DE UN RANDOM 2.2
-Random dice = new Random();
-int roll = dice.Next(1,7);
-Console.WriteLine(roll);
+Ejemplo 3.3 Switch cases
 
-// EJERCICIO 2.2.5
-int firstValue = 500;
-int secondValue = 600;
-int max = Math.Max(firstValue,secondValue);
+int employeeLevel = 200;
+string employeeName = "John Smith";
 
-Console.WriteLine(max);
+string title = "";
 
-// EJEMPLO DE 2.3.2 IF'S
-Random dice = new Random();
-
-var total = 1;
-var tirada = 1;
-
-Console.Write("Dice roll");
-for (int i = 0; i < 3; i++)
+switch (employeeLevel)
 {
-    tirada = dice.Next(1, 7);
-    Console.Write($" {tirada} + ");
-    total += tirada;
+    case 100:
+    case 200:
+        title = "Senior Associate";
+        break;
+    case 300:
+        title = "Manager";
+        break;
+    case 400:
+        title = "Senior Manager";
+        break;
+    default:
+        title = "Associate";
+        break;
 }
 
-
-Console.WriteLine($"Total: {total}");
-
-if (total > 10)
-{
-    Console.WriteLine("You win!");
-}
-
-else
-{
-    Console.WriteLine("Sorry, you lose.");
-}
+Console.WriteLine($"{employeeName}, {title}");.
 */
-//EJERCICIO DE MEDIAS CON ARRAYS 
- // Crear una lista de nombres
-        List<string> nombres = new List<string> { "Sophia", "Andrew", "Emma", "Logan" ,"jose"};
 
-        // Crear una lista de listas de enteros para las notas
-        List<List<int>> notas = new List<List<int>>
-        {
-            new List<int> { 90, 86, 87, 98, 100 },
-            new List<int> { 92, 89, 81, 96, 90 },
-            new List<int> { 90, 85, 87, 98, 68 },
-            new List<int> { 90, 95, 87, 88, 96 },
-            new List<int> { 90, 95, 87, 88, 96 }
+// EJERCICIO 3.3 Switch cases omitiendo if else
+string sku = "02-BL-S";
 
-        };
+string[] product = sku.Split('-');
 
-        // Mostrar los nombres y sus valores asociados
-        for (int i = 0; i < nombres.Count; i++)
-        {
-            var nombre = nombres[i];
-            var listaNotas = notas[i];
+string type = "";
+string color = "";
+string size = "";
 
-            int sumaDeValores = 0;
+switch (product[0])
+{
+    case "01":
+        type = "Sweat shirt";
+        break;
+    case "02":
+        type="T-Shirt";
+        break;
+    case "03":
+        type="Sweat pants";
+        break;
+    default:
+        type="Other";
+        break;
+}
 
-            foreach (var nota in listaNotas)
-            {
-                sumaDeValores += nota;
-            }
+switch (product[1]){
+    case "BL":
+        color="Black";
+        break;
+    case "MN":
+        color="Maroon";
+        break;
+    default:
+        color="White";
+        break;
+}
 
-            var media = sumaDeValores / listaNotas.Count;
+switch (product[2]){
+    case "S":
+        size="Small";
+        break;
+    case "M":
+        size ="Medium";
+        break;
+    case"L":
+        size = "Large";
+        break;
+    default:
+        size = "One Size Fits All";
+        break;
+}
 
-            // Determinar la letra correspondiente según la media
-            string letra = media switch
-            {
-                >= 97 => "A+",
-                >= 93 => "A",
-                >= 90 => "A-",
-                >= 87 => "B+",
-                >= 83 => "B",
-                >= 80 => "B-",
-                >= 77 => "C+",
-                >= 73 => "C",
-                >= 70 => "C-",
-                >= 67 => "D+",
-                >= 63 => "D",
-                >= 60 => "D-",
-                _ => "F"
-            };
-
-            // Imprimir la información
-            Console.WriteLine($"Nombre: {nombre}, Valores: {string.Join(",", listaNotas)}, Media: {media}, Letra: {letra}");
-        }
-    
+Console.WriteLine($"Product: {size} {color} {type}");
