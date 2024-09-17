@@ -1,83 +1,34 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Drawing;
 /*
-Ejemplo 3.3 Switch cases
+//Ejemplo 3.1 Caso ternario < >
 
-int employeeLevel = 200;
-string employeeName = "John Smith";
+int saleAmount = 1001;
+// int discount = saleAmount > 1000 ? 100 : 50;
 
-string title = "";
+Console.WriteLine($"Discount: {(saleAmount > 1000 ? 100 : 50)}");
 
-switch (employeeLevel)
-{
-    case 100:
-    case 200:
-        title = "Senior Associate";
-        break;
-    case 300:
-        title = "Manager";
-        break;
-    case 400:
-        title = "Senior Manager";
-        break;
-    default:
-        title = "Associate";
-        break;
+//Ejercicio 3.1 Bucle con ternario que dice si es cara o cruz
+
+Random n1 = new Random();
+
+while(true){
+    int randomN = n1.Next(0,2);
+    Console.WriteLine((randomN == 0) ? "heads": "tails");
+    System.Threading.Thread.Sleep(500);
 }
-
-Console.WriteLine($"{employeeName}, {title}");.
 */
+// EJERCICIO 3.1.2 Ejercicio con tenario con privliegios
+string permission = "Admin";
+int level = 15;
+        // Determinar el mensaje usando expresiones ternarias
+        string message = permission.Contains("Admin")
+            ? (level > 55 ? "Welcome, Super Admin user." : "Welcome, Admin user.")
+            : permission.Contains("Manager")
+                ? (level > 20 ? "Contact an Admin for access." : "You do not have sufficient privileges.")
+                : "You do not have sufficient privileges.";
 
-// EJERCICIO 3.3 Switch cases omitiendo if else
-string sku = "02-BL-S";
+        // Mostrar el mensaje
+        Console.WriteLine(message);
 
-string[] product = sku.Split('-');
 
-string type = "";
-string color = "";
-string size = "";
-
-switch (product[0])
-{
-    case "01":
-        type = "Sweat shirt";
-        break;
-    case "02":
-        type="T-Shirt";
-        break;
-    case "03":
-        type="Sweat pants";
-        break;
-    default:
-        type="Other";
-        break;
-}
-
-switch (product[1]){
-    case "BL":
-        color="Black";
-        break;
-    case "MN":
-        color="Maroon";
-        break;
-    default:
-        color="White";
-        break;
-}
-
-switch (product[2]){
-    case "S":
-        size="Small";
-        break;
-    case "M":
-        size ="Medium";
-        break;
-    case"L":
-        size = "Large";
-        break;
-    default:
-        size = "One Size Fits All";
-        break;
-}
-
-Console.WriteLine($"Product: {size} {color} {type}");
