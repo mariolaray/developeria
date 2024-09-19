@@ -15,32 +15,15 @@ else
 Console.WriteLine($"Measurement (w/ offset): {50 + result}");
 
 */
-// EJERCICIO 4.2 TryParse 
-using System;
+// EJERCICIO 4.2.2
+int value1 = 11;
+decimal value2 = 6.2m;
+float value3 = 4.3f;
 
+var result1 = (int)Math.Round(value1 / value2);
+var result2 = value2 / (decimal)value3;
+var result3 = value3 / value1;
 
-
-        string[] values = { "12,3", "45", "ABC", "11", "DEF" }; // Nota: Asegúrate de usar punto (.) en lugar de coma (,)
-        string message = "";
-        double total = 0;
-
-        for (int i = 0; i < values.Length; i++)
-        {
-            double numero;
-            
-            // Intentamos convertir el valor a número
-            if (double.TryParse(values[i], out numero))
-            {
-                // Si es un número, sumarlo al total
-                total += numero;
-            }
-            else
-            {
-                // Si no es un número, concatenarlo al mensaje
-                message += values[i];
-            }
-        }
-
-        // Mostrar los resultados finales solo una vez al final
-        Console.WriteLine($"Message: {message}");
-        Console.WriteLine($"Total: {total}");
+Console.WriteLine($"Divide value1 by value2, display the result as an int: {result1}");
+Console.WriteLine($"Divide value2 by value3, display the result as a decimal: {result2}");
+Console.WriteLine($"Divide value3 by value1, display the result as a float: {result3}");
