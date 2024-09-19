@@ -1,49 +1,46 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Drawing;
 /*
-Random random = new Random();
-int current = 0;
 
-do
+string value = "102";
+int result = 0;
+if (int.TryParse(value, out result))
 {
-    current = random.Next(1, 11);
-    Console.WriteLine(current);
-} while (current != 7);
+   Console.WriteLine($"Measurement: {result}");
+}
+else
+{
+   Console.WriteLine("Unable to report the measurement.");
+}
+Console.WriteLine($"Measurement (w/ offset): {50 + result}");
+
 */
+// EJERCICIO 4.2 TryParse 
+using System;
 
-// 
-Random random = new Random();
 
-int saludMonstruo = 10;
-int saludHeroe = 10;
-int daño;
 
-do
-{
-    
-    if (saludMonstruo > 0)
-    {
-        daño = random.Next(0, 11);
-        saludMonstruo -= daño;
-        Console.WriteLine($"DAÑO INFLINGIDO AL MONSTRUO : {daño}* , le queda al monstruo: {saludMonstruo} de vida");
-        if (saludMonstruo <= 0)
+        string[] values = { "12,3", "45", "ABC", "11", "DEF" }; // Nota: Asegúrate de usar punto (.) en lugar de coma (,)
+        string message = "";
+        double total = 0;
+
+        for (int i = 0; i < values.Length; i++)
         {
-            saludMonstruo = 0;
-            Console.WriteLine($"LA SALUD DEL MONSTRUO HA LLEGADO A {saludMonstruo} Ó MENOS, el monstruo ha sido derrotado");
+            double numero;
+            
+            // Intentamos convertir el valor a número
+            if (double.TryParse(values[i], out numero))
+            {
+                // Si es un número, sumarlo al total
+                total += numero;
+            }
+            else
+            {
+                // Si no es un número, concatenarlo al mensaje
+                message += values[i];
+            }
         }
 
-
-        if (saludHeroe > 0 && saludMonstruo > 0)
-        {
-            daño = random.Next(1, 11);
-            saludHeroe -= daño;
-            Console.WriteLine($"DAÑO INFLINGIDO AL HEROE : {daño}* , le queda al heroe: {saludHeroe} de vida");
-        }
-        if (saludHeroe <= 0)
-        {
-            saludHeroe = 0;
-            Console.WriteLine($"LA SALUD DEL HEROE HA LLEGADO A {saludHeroe} Ó MENOS , el heroe ha sido derrotado");
-        }
-    }
-} while (saludMonstruo > 0 && saludHeroe > 0);
-
+        // Mostrar los resultados finales solo una vez al final
+        Console.WriteLine($"Message: {message}");
+        Console.WriteLine($"Total: {total}");
