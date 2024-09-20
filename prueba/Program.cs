@@ -1,29 +1,25 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Drawing;
 /*
-
-string value = "102";
-int result = 0;
-if (int.TryParse(value, out result))
-{
-   Console.WriteLine($"Measurement: {result}");
-}
-else
-{
-   Console.WriteLine("Unable to report the measurement.");
-}
-Console.WriteLine($"Measurement (w/ offset): {50 + result}");
-
 */
-// EJERCICIO 4.2.2
-int value1 = 11;
-decimal value2 = 6.2m;
-float value3 = 4.3f;
 
-var result1 = (int)Math.Round(value1 / value2);
-var result2 = value2 / (decimal)value3;
-var result3 = value3 / value1;
+// EJERCICIO 4.3 SOLUCION CON REVERSE()
+string pangram = "The quick brown fox jumps over the lazy dog";
 
-Console.WriteLine($"Divide value1 by value2, display the result as an int: {result1}");
-Console.WriteLine($"Divide value2 by value3, display the result as a decimal: {result2}");
-Console.WriteLine($"Divide value3 by value1, display the result as a float: {result3}");
+// Step 1
+string[] message = pangram.Split(' ');
+
+//Step 2
+string[] newMessage = new string[message.Length];
+
+// Step 3
+for (int i = 0; i < message.Length; i++)
+{
+    char[] letters = message[i].ToCharArray();
+    Array.Reverse(letters);
+    newMessage[i] = new string(letters);
+}
+
+//Step 4
+string result = String.Join(" ", newMessage);
+Console.WriteLine(result);
