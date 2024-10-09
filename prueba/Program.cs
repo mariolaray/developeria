@@ -1,4 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// MI PRIMERA CI
+// See https://aka.ms/new-console-template for more information
 using System.Drawing;
 using System.Globalization;
 
